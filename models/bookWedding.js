@@ -100,11 +100,11 @@ var weddingShema = new Schema({
     },
     date: {
         type: Date,
-        required: true
+        required: false
     },
     time: {
         type: String,
-        required: true,
+        required: false,
     },
     budget: {
         type: Number,
@@ -112,7 +112,7 @@ var weddingShema = new Schema({
     },
     currency: {
         type: String,
-        required: true
+        required: false
     },
     food: [foodSchema],
     music: [musicSchema],

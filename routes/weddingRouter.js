@@ -19,6 +19,7 @@ weddingRouter.route('/')
             .catch((err) => next(err));
     })
     .post((req, res, next) => {
+        console.log(req.body)
         Weddings.create(req.body)
             .then((wedding) => {
                 console.log('wedding Created ', wedding);
@@ -26,7 +27,10 @@ weddingRouter.route('/')
                 res.setHeader('Content-Type', 'application/json');
                 res.json(wedding);
             }, (err) => next(err))
-            .catch((err) => next(err));
+            .catch((err) => {
+                console.log(err)
+                next(err)
+            });
     })
     .put((req, res, next) => {
         res.statusCode = 403;
